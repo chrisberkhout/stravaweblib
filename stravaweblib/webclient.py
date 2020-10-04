@@ -3,7 +3,6 @@ import cgi
 from collections import namedtuple
 from datetime import date, datetime
 import enum
-import functools
 import json
 import re
 import time
@@ -469,7 +468,6 @@ class ScrapingClient:
         except ValueError:
             return None
 
-    @functools.lru_cache()
     def _get_all_bike_components(self, bike_id):
         """
         Get all components for the specified bike
