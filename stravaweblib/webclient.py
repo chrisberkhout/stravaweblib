@@ -105,7 +105,7 @@ class WebClient(stravalib.Client):
         on if the client is logged in or not.
         """
         login_html = self._session.get("{}/about".format(BASE_URL)).text
-        soup = BeautifulSoup(login_html, 'html5lib')
+        soup = BeautifulSoup(login_html, 'html.parser')
 
         try:
             head = soup.head
